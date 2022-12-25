@@ -101,7 +101,7 @@ func main() {
 			},
 			//LimitsConfig            Limits
 			ConnectionManagerConfig: ConnectionManager{},
-			DatabaseConnString:      "sqlite=whypfs.db",
+			DatabaseConnString:      "postgres=host=localhost port=26258 user=whypfs dbname=whypfs",
 		}
 
 		nd, err := Setup(ctx, cfg)
