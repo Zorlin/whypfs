@@ -52,6 +52,10 @@ func main() {
 			Name:  "blockstore",
 			Usage: "specify alternate blockstore",
 		},
+		&cli.StringFlag{
+			Name: "database",
+			Usage: "specify database connection details",
+		},
 		&cli.StringSliceFlag{
 			Name:  "listen-addr",
 			Usage: "specify libp2p listen multiaddrs",
@@ -85,6 +89,11 @@ func main() {
 		bstore := cctx.String("blockstore")
 		if bstore == "" {
 			bstore = ":flatfs:" + filepath.Join(repo, "blocks")
+		}
+		
+		database := cctx.String("database")
+		if database == "" {
+			database = "sqlite=whypfs.db"
 		}
 
 		cfg := &Config{
