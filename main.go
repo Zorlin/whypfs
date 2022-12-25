@@ -110,7 +110,7 @@ func main() {
 			},
 			//LimitsConfig            Limits
 			ConnectionManagerConfig: ConnectionManager{},
-			DatabaseConnString:      "postgres=host=localhost port=26258 user=whypfs dbname=whypfs",
+			DatabaseConnString: database,
 		}
 
 		nd, err := Setup(ctx, cfg)
